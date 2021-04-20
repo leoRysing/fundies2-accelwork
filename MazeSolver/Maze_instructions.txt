@@ -1,0 +1,7 @@
+﻿----------------------------------- Maze instructions ------------------------------------
+- When you create a new maze, you have the option of seeing its construction by knocking down walls. To do so, pass in true for the constructor
+- Access to functionality is not available while the maze is under construction; it does not make sense to see the heatmaps (distances from start or end), nor search through the maze, until it is fully constructed
+- Once constructed, you have 3 options for traversal; You can press “b” to choose a breadth first search, “d” to choose a depth first search, or “m” to go into manual traversal. Once you choose one mode, you cannot choose another until you generate a new maze
+- If in manual mode, use the left, up, down, right arrow keys to navigate the maze
+- You can reset the maze by pressing “r”. This will generate a new maze, with the same dimensions as the previous maze, and the same preference for construction
+- Each maze can be created with a specific preference, represented by an integer. A preference of 0 represents a truly random maze, while 1 signifies a preference for vertical edges, and -1 for horizontal ones
