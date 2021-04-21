@@ -1,0 +1,44 @@
+- interface ILoColor: Represents a list of Color objects
+
+- class MtLoColor implements ILoColor: Represemts the Empty case for the list of colors
+
+- class ConsLoColor implements ILoColor: Represents the Cons case for the list of colors
+	Color first
+	ILoColor rest
+
+ILoColor and its associated classes, as shown in the purpose statements, represent lists of colors. They are used to represent guesses in the Game of Mastermind, 
+as well as the color palette you can use in a game, and the secret you are trying to guess. There are methods here used to compare two list of guesses, in order
+to see how many colors are correct and nearby between a guess and secret. Other methods work to allow for helpful implementations, that allow for getting specific
+volotd in s lidt, randomiing a list of colors given a palette, etc.
+
+------------------------------------------------------------------------
+- class GuessPair: Represnts a pair of a list with a string. The list is a list of colors and the string is the output recieved when the list of colors was compared with the secret
+	ILoColor list: the list of colors compared with the secret
+	String guessOutput: the result of running the list through the comparison with the secret
+
+- interface ILoGuessPair: Represents a list of the afformentioned GuessPairs
+
+- class MtLoGuessPair implements ILoGuessPair: Represents the empty case for a list of Guess Pairs 
+
+- class ConsLoColor implements ILoGuessPair: Represents the cons case for a list of Guess Pair
+	GuessPair first
+	ILoGuessPair rest
+
+GuessPair and ILoGuessPair are classes that help collect previous guess list of colors matched with a string that represents how correct a certain guess is compared
+to a secret. These classes can check if a given guess string is a "winning state" by parsing the first number and making sure it is the same size as the width of the
+secret. Besides this, these methods can also draw the previous guesses.
+
+------------------------------------------------------------------------
+- class YourWorld extends World: Represnts the World that we will use throughout the game. Big bang uses instances of this class to render and process the game
+	ILoColor colorPalette: Represents all the possible colors in the instance of the game
+	ILoColor secret: Represents the secret that the user must guess in order to win
+	int width: how many circles wide the secret and guess must be
+	int numGuesses: how many guesses the user has left to huess the secret
+	ILoColor currGuess: the current guess that the user is building up
+	ILoGuessPair prevGuesses: the list of all the previous guesses the user has made along with the result of the guess   
+
+YourWorld is the main class used to represent the game of Mastemrind. As shown, it uses ILoColor, ILoGuessPair, and ints to represent the different variables
+needed in the game of Mastermind. The secret is usually randomized, while the rest of the ILoColor's are specifically instantiated at the start.
+
+
+	
